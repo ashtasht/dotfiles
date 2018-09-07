@@ -1,1 +1,4 @@
-/home/amitg/.Xresources
+URxvt.font: xft:Hack-Regular.ttf:size=11
+URxvt.scrollBar: false
+
+URxvt.depth: 32

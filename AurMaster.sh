@@ -1,1 +1,0 @@
-/home/amitg/AurMaster.sh
