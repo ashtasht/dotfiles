@@ -1,11 +1,15 @@
-#/bin/bash
+#/bin/sh
 
-o0="colemak"
-o1="qwerty"
-o2="dvorak"
-sel=$(echo -e "$o0\n$o1\n$o2" | rofi -dmenu -p key)
-if [ $sel = "qwerty" ]; then
-	setxkbmap us
-else
-	setxkbmap us -variant $sel
+o1='shutdown'
+o2='reboot'
+o3='restart i3'
+
+sel=$(echo -e "$o1\n$o2\n$o3" | rofi -dmenu -p power)
+
+if [ "$sel" = "$o1" ]; then
+	shutdown now
+elif [ "$sel" = "$o2" ]; then
+	reboot
+elif [ "$sel" = "$o3" ]; then
+	sudo systemctl restart lightdm.service
 fi

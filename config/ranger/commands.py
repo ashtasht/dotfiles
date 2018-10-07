@@ -102,13 +102,12 @@ class extract(Command):
         os.system('dtrx -n ' + self.arg(1))
 
 class wallpaper(Command):
-    """
-    :wallpaper <file>
-
-    Set <file> as a wallpaper and switch the colors of the terminal.
-    """
-
     def execute(self):
         import os
         os.chdir('/home/amitg/.config/i3')
-        os.system('./wall.sh ' + str(self.fm.thisfile.path))
+        os.system('./wall.sh ' + str(self.arg(1)) + ' ' +str(self.fm.thisfile.path))
+
+class win(Command):
+    import os
+    def execute(self):
+        os.system('urxvt -e ranger ' + str(self.fm.thisdir) + '&')
