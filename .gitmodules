@@ -4,3 +4,12 @@
 [submodule "vim/.vim/pack/auto-pairs/start/auto-pairs"]
 	path = vim/.vim/pack/auto-pairs/start/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule "vim/.vim/pack/nerdtree/start/nerdtree"]
+	path = vim/.vim/pack/nerdtree/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/.vim/pack/vim-workman/start/vim-workman"]
+	path = vim/.vim/pack/vim-workman/start/vim-workman
+	url = https://github.com/nicwest/vim-workman.git
+[submodule "vim/.vim/pack/vim-eunuch/start/vim-eunuch"]
+	path = vim/.vim/pack/vim-eunuch/start/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch.git
