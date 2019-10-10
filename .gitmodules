@@ -1,0 +1,6 @@
+[submodule "vim/.vim/autoload/vim-plug"]
+	path = vim/.vim/autoload/vim-plug
+	url = https://github.com/junegunn/vim-plug.git
+[submodule "vim/.vim/pack/auto-pairs/start/auto-pairs"]
+	path = vim/.vim/pack/auto-pairs/start/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
