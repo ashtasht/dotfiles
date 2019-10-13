@@ -21,7 +21,7 @@ set conceallevel=0
 " let g:ale_echo_msg_warning_str = 'W'
 " let g:ale_echo_msg_format = '[%severity%][%linter%]: %s'
 
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_priority = -1
-"au BufEnter * :Limelight
+"let g:limelight_conceal_ctermfg = 'gray'
+"let g:limelight_priority = -1
 "highlight EndOfBuffer ctermfg=black ctermbg=black
+syntax on

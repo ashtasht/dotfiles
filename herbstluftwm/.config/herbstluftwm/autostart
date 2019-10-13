@@ -1,0 +1,117 @@
+#!/usr/bin/env bash
+
+hc() {
+	herbstclient "$@"
+}
+
+hc emit_hook reload
+hc unlock
+
+#############################################
+#                  vars                     #
+#############################################
+resizeStep=0.03
+
+#############################################
+#                keybinds                   #
+#############################################
+#
+# All the keybinds that are not related to herbstluftwm will be in xbindkeys.
+#
+
+hc keyunbind --all
+hc mouseunbind --all
+hc unrule -F
+
+# Set the super key to Win
+Mod=Mod4
+
+# Closing
+hc keybind $Mod-q close
+hc keybind $Mod-Shift-q quit
+hc keybind $Mod-Shift-r reload
+
+# Focusing
+hc keybind $Mod-y focus left
+hc keybind $Mod-n focus down
+hc keybind $Mod-e focus up
+hc keybind $Mod-o focus right
+hc keybind $Mod-BackSpace cycle_monitor
+hc keybind $Mod-Tab cycle_all +1
+
+# Moving
+hc keybind $Mod-Shift-Shift-y shift left
+hc keybind $Mod-Shift-n shift down
+hc keybind $Mod-Shift-e shift up
+hc keybind $Mod-Shift-o shift right
+hc keybind $Mod-space                                                           \
+            or , and . compare tags.focus.curframe_wcount = 2                   \
+                     . cycle_layout +1 vertical horizontal max vertical grid    \
+               , cycle_layout +1
+hc keybind $Mod-Shift-space floating toggle
+
+# Resizing
+hc keybind $Mod-Control-y resize left +$resizeStep
+hc keybind $Mod-Control-n resize down +$resizeStep
+hc keybind $Mod-Control-e resize up +$resizeStep
+hc keybind $Mod-Control-o resize right +$resizeStep
+hc keybind $Mod-k fullscreen toggle
+
+# Frames
+hc keybind $Mod-f split buttom 0.5
+hc keybind $Mod-p split explode
+hc keybind $Mod-u split right 0.5
+hc keybind $Mod-;  split auto
+hc keybind $Mod-d remove
+
+# Mouse
+hc mousebind $Mod-Button1 move
+hc mousebind $Mod-Button3 zoom
+
+ # tags
+tag_names=( 1 2 3 4 5 6 7 M B )
+tag_keys=( 1 2 3 4 5 6 7 8 9 )
+
+hc rename default "${tag_names[0]}" || true
+for i in ${!tag_names[@]} ; do
+    hc add "${tag_names[$i]}"
+    key="${tag_keys[$i]}"
+    if ! [ -z "$key" ] ; then
+        hc keybind "$Mod-$key" use_index "$i"
+        hc keybind "$Mod-Shift-$key" move_index "$i"
+    fi
+done
+
+#############################################
+#                  colors                   #
+#############################################
+
+hc set always_show_frame 1
+hc set frame_border_width 0
+hc set frame_border_normal_color $(xgetres *.color3)
+hc set frame_bg_active_color $(xgetres *.background_active)
+hc set frame_bg_transparent 1
+hc set frame_padding -3
+hc set window_gap 6
+hc attr theme.active.color $(xgetres \*.foreground)
+hc attr theme.normal.color $(xgetres \*.background)
+
+#############################################
+#                  rules                    #
+#############################################
+
+hc set snap_distance 20
+hc rule focus=on
+hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
+hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
+
+#############################################
+#                  start                    #
+#############################################
+
+hc attr theme.tilling.reset 1
+hc attr theme.floating.reset 1
+
+for f in ~/.config/autostart/*; do
+   sh $f &
+done

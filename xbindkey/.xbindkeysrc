@@ -1,0 +1,41 @@
+# Version: 1.8.6
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
+#
+# List of modifier:
+#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4 (Super/Win), Mod5 (Scroll).
+#
+
+# The release modifier is not a standard X modifier, but you can
+# use it if you want to catch release events instead of press events
+
+#keystate_numlock = enable
+#keystate_capslock = enable
+#keystate_scrolllock = enable
+
+#########
+# Keys: #
+#########
+
+"xst &"
+  Mod4 + t
+"~/.config/scripts/menus/launcher.sh"
+  Mod4 + Return
+"~/.config/scripts/menus/spec.sh"
+  Mod4 + a
+"~/.config/scripts/menus/power.sh"
+  Mod4 + j
+"~/.config/scripts/menus/rename.sh"
+  Mod4 + g
+
+"cmus-remote -u"
+  XF86AudioPlay
+"amixer set -c1 Master toggle"
+  XF86AudioMute
+"amixer set -c1 Master 5%-"
+  XF86AudioLowerVolume
+"amixer set -c1 Master 5%+"
+  XF86AudioRaiseVolume
