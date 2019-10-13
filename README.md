@@ -14,4 +14,5 @@ herbstluftwm/ Herbstluftwm configurations, including also a custom rice starting
 vim/ Vim configuration files and plugins
 xbindkey/ Non-Herbstluftwm related keybinds
 zsh/ Zsh configurations
+redshift/ Redshift configurations
 ```
