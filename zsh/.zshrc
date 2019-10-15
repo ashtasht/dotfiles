@@ -20,7 +20,7 @@ zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 
 # Look
 autoload -Uz promptinit 
-fpath=( "$HOME/.config/zsh/.zprompts" $fpath ) # load custom prompts
+fpath=( "$HOME/.zprompts" $fpath ) # load custom prompts
 promptinit # start the feature
 prompt func # set the prompt
 

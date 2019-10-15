@@ -1,0 +1,19 @@
+#!/bin/zsh --no-rcs
+
+prompt_func_setup () {
+   local prompt_left=${1:-']'}
+   local col_left=${2:-'1'}
+   local col_path=${3:-'7'}
+   
+   local cl_left=" %B%F{$col_left}"
+   local cl_path="%b%F{$col_path}"
+   local cl_rst="%b%f"
+   
+   local _left="$cl_left$prompt_left "
+   local _path="$cl_path%20<...<%~%<<"
+   PS1="$_path$_left$cl_rst"
+   PS2="$cl_left> $cl_rst"
+   RPS1="$cl_rst"
+}
+
+prompt_func_setup "$@"
