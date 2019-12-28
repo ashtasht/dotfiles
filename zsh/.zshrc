@@ -1,5 +1,19 @@
 # Created by amitg for 5.6.2
- 
+
+echo hiiiiiiiiiii
+
+###############################
+#            PATH             #
+###############################
+
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=$JAVA_HOME/bin:$PATH
+export PATH=/home/amitg/.bin:$PATH
+XDG_CONFIG_HOME=~/.config
+
+export ZDOTDIR="$HOME/.config/zsh"
+
 ###############################
 #       CONFIGURATIONS        #
 ###############################

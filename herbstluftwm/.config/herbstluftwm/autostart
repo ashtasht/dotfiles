@@ -91,8 +91,8 @@ hc set frame_border_width 0
 hc set frame_border_normal_color $(xgetres *.color3)
 hc set frame_bg_active_color $(xgetres *.background_active)
 hc set frame_bg_transparent 1
-hc set frame_padding -3
-hc set window_gap 6
+hc set frame_padding -2
+hc set window_gap 7
 hc attr theme.active.color $(xgetres \*.foreground)
 hc attr theme.normal.color $(xgetres \*.background)
 
@@ -104,6 +104,7 @@ hc set snap_distance 20
 hc rule focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
+hc rule class~"mpv" manage=off
 
 #############################################
 #                  start                    #

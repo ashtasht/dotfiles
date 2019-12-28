@@ -20,7 +20,7 @@
 # Keys: #
 #########
 
-"xst &"
+"urxvt &"
   Mod4 + t
 "~/.config/scripts/menus/launcher.sh"
   Mod4 + Return
@@ -30,8 +30,10 @@
   Mod4 + j
 "~/.config/scripts/menus/rename.sh"
   Mod4 + g
+"~/.config/scripts/menus/msmu.sh"
+  Mod4 + m
 
-"cmus-remote -u"
+"msmu pause"
   XF86AudioPlay
 "amixer set -c1 Master toggle"
   XF86AudioMute

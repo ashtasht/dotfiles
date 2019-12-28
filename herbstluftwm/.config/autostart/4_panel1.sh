@@ -3,10 +3,10 @@ alias hc=herbstclient
 
 # Varibles
 nbg=$(xgetres *.background)
-nfg=$(xgetres *.foreground)
-ufg=$(xgetres *.foreground)
-unfg=$(xgetres *.color5)
-cfg=$(xgetres *.color1)
+nfg=$(xgetres *.color1)
+ufg=$(xgetres *.color1)
+unfg=$(xgetres *.color4)
+cfg=$(xgetres *.foreground)
 
 # Bar
 herbstclient --idle 2>/dev/null | {
@@ -37,4 +37,4 @@ herbstclient --idle 2>/dev/null | {
             quit_panel*) exit ;;
         esac
     done
-} | dzen2 -x 2023 -h 33 -w 1080 -ta l -fn 'PixelOperator' -fg "$nfg" -bg "$nbg"
+} | dzen2 -x 1920 -h 33 -w 1920 -ta l -fn 'PixelOperator' -fg "$nfg" -bg "$nbg"
