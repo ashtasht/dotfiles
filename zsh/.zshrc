@@ -1,7 +1,5 @@
 # Created by amitg for 5.6.2
 
-echo hiiiiiiiiiii
-
 ###############################
 #            PATH             #
 ###############################

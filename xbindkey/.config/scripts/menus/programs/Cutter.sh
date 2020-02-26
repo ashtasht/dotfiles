@@ -1,2 +1,2 @@
 #!/bin/bash
-patchmatrix
+Cutter

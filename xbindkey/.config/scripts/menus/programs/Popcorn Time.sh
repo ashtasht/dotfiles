@@ -1,2 +1,2 @@
 #!/bin/bash
-popcorntime
+popcorntime > ~/tmp/log

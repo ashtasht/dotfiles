@@ -32,6 +32,8 @@
   Mod4 + g
 "~/.config/scripts/menus/msmu.sh"
   Mod4 + m
+"~/.config/scripts/menus/web.sh"
+  Mod4 + w
 
 "msmu pause"
   XF86AudioPlay

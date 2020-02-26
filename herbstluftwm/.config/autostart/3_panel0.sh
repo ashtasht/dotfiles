@@ -2,8 +2,6 @@
 alias hc=herbstclient
 
 # Varible
-nbg=$(xgetres *.background)
-nfg=$(xgetres *.color1)
 ufg=$(xgetres *.color1)
 unfg=$(xgetres *.color4)
 cfg=$(xgetres *.foreground)
@@ -52,5 +50,4 @@ herbstclient --idle 2>/dev/null | {
             quit_panel*) exit ;;
         esac
     done
-} | dzen2 -x 0 -h 33 -w 1920 -ta l -fn 'PixelOperator' -fg "$nfg" -bg "$nbg" # -e "entertitle=uncollapse,grabkeys;enterslave=grapkeys;leaveslave=collapse,ungrabkeys;button1=menuexec;button2=togglestick;button4=scrollup;button5=scrolldown"
-
+} | dzen2 -x 1920 -h 33 -w 1920 -ta l -fn "xft:M+ 2m:size=10"
